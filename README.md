@@ -2,6 +2,8 @@
 
 An end-to-end computer vision pipeline: **YOLOv8 detection -> ONNX export -> INT8 post-training quantization -> ONNX Runtime inference -> Kalman-filter multi-object tracking**, with a benchmark that measures accuracy-vs-latency trade-offs for edge deployment.
 
+![VisionTrack pipeline](assets/visiontrack_pipeline.png)
+
 ## What's inside
 
 | Component | File | Details |
@@ -33,6 +35,8 @@ pytest -q
 ## Results
 
 Reference run from `benchmark.py`: 2-vCPU cloud CPU, 640x640 input, 40 frames, YOLOv8n, INT8 calibrated on only 12 sample frames. Numbers will differ on other hardware, so re-run `benchmark.py` on yours.
+
+![Latency and FPS across PyTorch, ONNX Runtime FP32 and INT8](assets/visiontrack_benchmark.png)
 
 | Model | Size | Mean latency | p95 | FPS | Agreement vs PyTorch (IoU>0.5) |
 |---|---|---|---|---|---|
