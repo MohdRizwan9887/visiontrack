@@ -1,0 +1,8 @@
+ultralytics>=8.3
+onnx
+onnxslim
+onnxruntime
+opencv-python
+numpy
+scipy
+pytest
